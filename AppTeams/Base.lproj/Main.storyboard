@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vkh-RT-J9q">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tus Equipos Favoritos-->
+        <scene sceneID="rLY-IL-pJb">
+            <objects>
+                <tableViewController id="5HI-x2-SXh" customClass="TablaEquipos" customModule="AppTeams" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dyo-FL-Yfp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.89071458579999996" green="0.86662489180000002" blue="0.86628025769999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CeldaEquipo" rowHeight="137" id="wHY-MC-6sE" customClass="CeldaEquipo" customModule="AppTeams" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="137"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wHY-MC-6sE" id="qk2-7n-kjW">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="136.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgA-eo-mq3">
+                                            <rect key="frame" x="120" y="11" width="274" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.70970676369863017" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="k9T-8E-c55">
+                                            <rect key="frame" x="0.0" y="0.0" width="112" height="137"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="OFb-LQ-hvk" customClass="RatingControl" customModule="AppTeams" customModuleProvider="target">
+                                            <rect key="frame" x="120" y="76" width="274" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.89071458578109741" green="0.86662489175796509" blue="0.86628025770187378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="fotoImagenEquipo" destination="k9T-8E-c55" id="olq-0j-oT8"/>
+                                    <outlet property="nombreEquipo" destination="tgA-eo-mq3" id="sBR-mc-WVh"/>
+                                    <outlet property="ratingControl" destination="OFb-LQ-hvk" id="Wro-Eq-rxI"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="FKv-2A-e39"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5HI-x2-SXh" id="yEe-RX-GTT"/>
+                            <outlet property="delegate" destination="5HI-x2-SXh" id="sVk-Wt-zBi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tus Equipos Favoritos" id="SfE-Ql-F65">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="d27-Mc-bnb">
+                            <connections>
+                                <segue destination="koI-k3-HBn" kind="presentation" identifier="addItem" id="Mej-1l-KZe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qf-gH-RlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126.08695652173914" y="20.758928571428569"/>
+        </scene>
+        <!--Nuevo Equipo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppTeams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone XR" translatesAutoresizingMaskIntoConstraints="NO" id="Y5B-Kk-5vk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <variation key="heightClass=compact-widthClass=regular" image="iPhone XR-1"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wx9-pj-mxq">
+                                <rect key="frame" x="20" y="167" width="374" height="472"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Equipo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXI-gU-VVj">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="24"/>
+                                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.83992401539999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre del Equipo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nlc-l3-ojz">
+                                        <rect key="frame" x="0.0" y="32" width="374" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.83992401539999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERm-wl-C1I">
+                                        <rect key="frame" x="0.0" y="70" width="22" height="22"/>
+                                        <color key="tintColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="0.83992401539999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="infoDark:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZR-fd-2sS"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="370" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="bET-JY-F9V">
+                                        <rect key="frame" x="0.0" y="100" width="370" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bET-JY-F9V" secondAttribute="height" multiplier="37:32" id="KUZ-D9-JFO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="m0N-aC-1XH" appends="YES" id="uYP-e4-HGT"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cvw-9p-h2Y" customClass="RatingControl" customModule="AppTeams" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="428" width="252" height="44"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Nlc-l3-ojz" secondAttribute="trailing" id="2YQ-kF-IqC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y5B-Kk-5vk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8e0-Dz-NEZ"/>
+                            <constraint firstItem="Wx9-pj-mxq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="79" id="HBL-Ej-IcD"/>
+                            <constraint firstAttribute="trailing" secondItem="Y5B-Kk-5vk" secondAttribute="trailing" id="HTC-hK-gZ2"/>
+                            <constraint firstItem="Wx9-pj-mxq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OPM-Hh-KQZ"/>
+                            <constraint firstItem="Y5B-Kk-5vk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XRo-3J-Hba"/>
+                            <constraint firstAttribute="bottom" secondItem="Y5B-Kk-5vk" secondAttribute="bottom" id="s6w-CF-ag9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wx9-pj-mxq" secondAttribute="trailing" id="uRN-dG-Y11"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nuevo Equipo" id="V0F-XT-ypu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XBw-ea-iDY">
+                            <connections>
+                                <action selector="cancelarBoton:" destination="BYZ-38-t0r" id="Qca-H6-WUT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yts-VQ-WsS">
+                            <connections>
+                                <segue destination="msc-LB-VXv" kind="unwind" unwindAction="unWindToListaEquipoWithSender:" id="Xhd-eH-g65"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fotoImageView" destination="bET-JY-F9V" id="tZS-MG-ybz"/>
+                        <outlet property="guardarBoton" destination="yts-VQ-WsS" id="p0P-d0-9Vh"/>
+                        <outlet property="nombreEquipo" destination="sXI-gU-VVj" id="Gmb-cI-SuK"/>
+                        <outlet property="nombreTextField" destination="Nlc-l3-ojz" id="xdQ-7L-doK"/>
+                        <outlet property="ratingControl" destination="Cvw-9p-h2Y" id="TQ2-dU-35r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="msc-LB-VXv" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="m0N-aC-1XH">
+                    <connections>
+                        <action selector="selectorImagen:" destination="BYZ-38-t0r" id="ZJc-ZK-AeN"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1878.2608695652175" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wIk-WG-PNm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vkh-RT-J9q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZuV-rI-Tri">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5HI-x2-SXh" kind="relationship" relationship="rootViewController" id="3qp-Ig-V6V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9U-XG-XlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-784.05797101449286" y="20.758928571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gdG-dr-1ay">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koI-k3-HBn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bhY-X0-xyW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="b2u-dv-faC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="41w-kr-B95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="583"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+        <image name="iPhone XR" width="414" height="896"/>
+        <image name="iPhone XR-1" width="896" height="414"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="FKv-2A-e39"/>
+    </inferredMetricsTieBreakers>
+</document>
